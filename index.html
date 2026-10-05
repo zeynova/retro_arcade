@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Arcade Salonu</title>
+    
+    <!-- YENİ BİLGİ: Google Fonts'tan "Press Start 2P" adındaki piksel yazı tipini sitemize çekiyoruz! -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="logo">ARCADE SALONU</h1>
+        <p class="slogan">Geçmişe Dönüş Başlıyor. Jeton Atın!</p>
+    </header>
+
+    <main>
+        <section class="oyun-kutuphanesi">
+            
+            <article class="oyun-karti">
+                <img src="gorseller/pacman.png" alt="Pac-Man Oyunu">
+                <div class="oyun-bilgi">
+                    <h3>Pac-Man</h3>
+                    <p>Yıl: 1980 | Tür: Labirent</p>
+                    <button type="button" class="btn-oyna" data-game="pacman">OYNA</button>
+                </div>
+            </article>
+
+            <article class="oyun-karti">
+                <img src="gorseller/tetris.webp" alt="Tetris Oyunu">
+                <div class="oyun-bilgi">
+                    <h3>Tetris</h3>
+                    <p>Yıl: 1984 | Tür: Bulmaca</p>
+                    <button type="button" class="btn-oyna" data-game="tetris">OYNA</button>
+                </div>
+            </article>
+
+            <article class="oyun-karti">
+                <img src="gorseller/mario.jpg" alt="Super Mario">
+                <div class="oyun-bilgi">
+                    <h3>Super Mario</h3>
+                    <p>Yıl: 1985 | Tür: Platform</p>
+                    <button type="button" class="btn-oyna" data-game="mario">OYNA</button>
+                </div>
+            </article>
+
+            <article class="oyun-karti">
+                <img src="gorseller/space-invaders.gif" alt="Space Invaders">
+                <div class="oyun-bilgi">
+                    <h3>Space Invaders</h3>
+                    <p>Yıl: 1978 | Tür: Nişancı</p>
+                    <button type="button" class="btn-oyna" data-game="space">OYNA</button>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <div id="game-modal" class="game-modal hidden" aria-hidden="true">
+        <div class="game-modal-panel">
+            <div class="modal-header">
+                <h2 id="modal-title">Oyun</h2>
+                <div class="modal-actions">
+                    <button id="pause-game" class="pause-game" type="button">DURAKLAT</button>
+                    <button id="close-game" class="close-game" type="button">KAPAT</button>
+                </div>
+            </div>
+
+            <div class="game-meta">
+                <div id="live-score" class="live-score">SKOR: 0</div>
+                <div id="level-label" class="level-label">SEVİYE 1</div>
+                <div id="best-score" class="best-score">EN YÜKSEK: 0</div>
+                <div id="lives-label" class="lives-label">CAN: 3</div>
+            </div>
+
+            <div class="scoreboard-panel">
+                <h3>Skor Tablosu</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Oyun</th>
+                            <th>Skor</th>
+                        </tr>
+                    </thead>
+                    <tbody id="score-table-body"></tbody>
+                </table>
+            </div>
+
+            <div id="game-menu" class="game-menu">
+                <div class="menu-panel">
+                    <h3>Oyun Menüsü</h3>
+                    <button id="menu-start" class="menu-btn" type="button">BAŞLAT</button>
+                    <button id="menu-pause" class="menu-btn" type="button">DURAKLAT</button>
+                    <button id="menu-reset" class="menu-btn" type="button">YENİDEN</button>
+                </div>
+            </div>
+
+            <canvas id="game-canvas" width="640" height="420"></canvas>
+            <p id="game-status" class="game-status">Kontrol tuşlarını kullanarak oynayın.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 1980 - 2024 Tüm Jeton Hakları Saklıdır.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
